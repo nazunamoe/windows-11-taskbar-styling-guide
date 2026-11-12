@@ -47,8 +47,9 @@ result.
   around the bar. It's a single edge-to-edge strip at the top of the screen.
 - **Golden Gate sunset rim** — the bottom edge carries a horizontal gradient
   from sunset gold through International Orange and dusk rose into bay blue.
-- **Tinted Liquid Glass** — `WindhawkBlur` gives the bar the frosted, slightly
-  warm transparency of macOS 27's refined Liquid Glass.
+- **Clear Liquid Glass** — `WindhawkBlur` gives the bar the largely transparent,
+  wallpaper-showing look of macOS 27's default Liquid Glass. A more opaque
+  tinted preset is available below for bright or busy wallpapers.
 - **Compact app strip** — 18px app icons, no labels, no running dots, and a
   subtle 5px-radius hover highlight. The Apple glyph sits at the far left like
   the Apple menu slot.
@@ -72,7 +73,7 @@ result.
 | Coral | `#FF8A5C` |
 | Dusk rose | `#E8B4A0` |
 | Bay blue | `#6FC7D9` |
-| Glass tint | `#2A1C22` |
+| Glass tint | `#1A1618` |
 | Accent | `#F2A65A` |
 | Primary text | `#F8F1E8` |
 
@@ -99,8 +100,13 @@ in the mod settings.
 | `Accent` | `#FFF2A65A` | Progress bars and attention accents |
 
 Golden Gate's Liquid Glass slider maps to the `TintOpacity` value inside
-`MenuBarBackground`: lower it for clearer glass, or raise it for the more
-opaque, tinted look that Apple added for legibility.
+`MenuBarBackground`. The default is the clear end of that slider
+(`TintOpacity="0.2"`). For the more opaque, tinted look that Apple added for
+legibility on bright or busy wallpapers, use:
+
+```yaml
+MenuBarBackground=<WindhawkBlur BlurAmount="32" TintColor="#2A1C22" TintOpacity="0.55" TintSaturation="1.15" TintLuminosityOpacity="0.3" NoiseOpacity="0.02" />
+```
 
 If a particular DPI or icon set still clips the right edge of an app icon, raise
 `ItemWidth` to `32` or lower `IconSize` to `16`. The default geometry uses a
@@ -139,6 +145,9 @@ Alt+Tab and Win+Tab still work for switching apps.
 
 - The taskbar must be at the top. The theme styles the bar; it doesn't move it.
   Install **Taskbar on top for Windows 11** and set it to **Top**.
+- The default clear glass shows the wallpaper. On a very bright wallpaper,
+  white text can lose contrast; use the tinted preset above or a darker
+  wallpaper.
 - The Start button uses the bundled Apple silhouette instead of the native
   Windows glyph. Change `StartLogo` if you prefer another image.
 - The date is hidden to keep the clock on one line. Use the [Taskbar Clock
@@ -166,7 +175,7 @@ styleConstants:
   - IconSize=18
   - TrayIconSize=14
   - ClockSize=12
-  - MenuBarBackground=<WindhawkBlur BlurAmount="32" TintColor="#2A1C22" TintOpacity="0.55" TintSaturation="1.15" TintLuminosityOpacity="0.3" NoiseOpacity="0.02" />
+  - MenuBarBackground=<WindhawkBlur BlurAmount="40" TintColor="#1A1618" TintOpacity="0.2" TintSaturation="1.08" TintLuminosityOpacity="0.18" NoiseOpacity="0.015" />
   - MenuBarBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="#4DFFD39A" Offset="0.0"/><GradientStop Color="#B3FFD39A" Offset="0.18"/><GradientStop Color="#66FF8A5C" Offset="0.5"/><GradientStop Color="#33E8B4A0" Offset="0.78"/><GradientStop Color="#4D6FC7D9" Offset="1.0"/></LinearGradientBrush>
   - StartLogo=<ImageBrush Stretch="Uniform" ImageSource="https://raw.githubusercontent.com/nazunamoe/windows-11-taskbar-styling-guide/main/Themes/GoldenGate/Assets/apple.png" />
   - HoverFill=#26FFE0B8
