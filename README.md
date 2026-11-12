@@ -250,6 +250,7 @@ Taskbar Styler mod. The following themes are available:
 | [Blob](Themes/Blob/README.md) | [![Blob](Themes/Blob/screenshot.png)](Themes/Blob/screenshot.png)
 | [Minecraft Hotbar](Themes/Minecraft%20Hotbar/README.md) | [![Minecraft Hotbar](Themes/Minecraft%20Hotbar/screenshot.png)](Themes/Minecraft%20Hotbar/screenshot.png)
 | [One UI 8.5](Themes/One%20UI%208.5/README.md) | [![One UI 8.5](Themes/One%20UI%208.5/screenshot.png)](Themes/One%20UI%208.5/screenshot.png)
+| [Golden Gate Menu Bar](Themes/GoldenGate/README.md) | *Preview pending*
 
 ### Customizing a theme
 
